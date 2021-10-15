@@ -30,7 +30,7 @@ public class Conta {
     @Column(name = "titular", nullable = false)
     private String titular;
 
-   
+
     public int getCodConta() {
         return codConta;
     }
