@@ -17,13 +17,12 @@ import br.itau.spring04.repository.ContaRepo;
 public class ContaController {
 
     @Autowired
-    private ContaRepo repo;
+    private ContaRepo repo; // implementa a interface, os métodos, e disponibiliza o objeto para uso
 
-    @GetMapping("/contas") //1ª maneira de puxar todos os dados
+    @GetMapping("/contas") // 1ª maneira de recuperar todos os dados
     public List<Conta> listarContas(){
         
        return repo.findAll();
-
     }
 }
 
