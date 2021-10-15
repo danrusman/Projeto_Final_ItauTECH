@@ -43,6 +43,7 @@ Todos os dados devem ser retornados em formato JSON.
 - API Spring Boot
 
 ## Integrantes
+- Bruno
 - Daniel Russo Manrique
 - Ramon
 - Raphael
