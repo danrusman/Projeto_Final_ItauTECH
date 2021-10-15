@@ -7,12 +7,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Entity //diz que essa classe vai ser armazenada no BD, pois nem todas pode ser armazenadas no BD
-@Table(name = "tb_conta") ///JPA sabe qual a tabela no banco que corresponde a essa CLASSE
+@Entity 
+@Table(name = "tb_conta") 
 public class Conta {
     @Id 
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // auto-increment 1, 2, 3...
+    @GeneratedValue(strategy = GenerationType.IDENTITY) 
     @Column(name = "cod")
+    private int codConta;
+
+    @Column(name = "numConta")
     private int numero;
 
     @Column(name = "agencia", unique = true, nullable = false)
@@ -27,7 +30,7 @@ public class Conta {
     @Column(name = "titular", unique = true, nullable = false)
     private String titular;
 
-    
+
 
     public int getNumero() {
         return numero;

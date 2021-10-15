@@ -11,13 +11,13 @@ import br.itau.spring04.model.Conta;
 import br.itau.spring04.repository.ContaRepo;
 @RestController // indica que esta classe é um controller REST
 @CrossOrigin("*") // aceita requisições de outros domínios
-@RequestMapping("/contas") // nome do recurso
+@RequestMapping("/") // nome do recurso
 public class ContaController {
 
     @Autowired
     private ContaRepo repo;
 
-    @GetMapping("/todos") //1ª maneira de puxar todos os dados
+    @GetMapping("/contas") //1ª maneira de puxar todos os dados
     public List<Conta> listarContas(){
         
        return repo.findAll();
