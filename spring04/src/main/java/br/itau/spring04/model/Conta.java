@@ -13,11 +13,19 @@ public class Conta {
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY) // auto-increment 1, 2, 3...
     @Column(name = "cod")
-    public int numero;
-    public int agencia;
-    public int tipoConta;
-    public double saldo;
-    public String titular;
+    private int numero;
+
+    @Column(name = "agencia", unique = true, nullable = false)
+    private int agencia;
+
+    @Column(name = "tipo_conta", unique = true, nullable = false)
+    private int tipoConta;
+
+    @Column(name = "saldo", nullable = false)
+    private double saldo;
+
+    @Column(name = "titular", unique = true, nullable = false)
+    private String titular;
 
 
 
