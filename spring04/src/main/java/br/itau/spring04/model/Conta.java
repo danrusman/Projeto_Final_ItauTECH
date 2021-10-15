@@ -27,7 +27,7 @@ public class Conta {
     @Column(name = "titular", unique = true, nullable = false)
     private String titular;
 
-
+    
 
     public int getNumero() {
         return numero;
