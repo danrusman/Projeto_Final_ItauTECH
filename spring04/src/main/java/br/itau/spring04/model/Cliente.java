@@ -1,5 +1,5 @@
 package br.itau.spring04.model;
 
-public class DescartarModel {
+public class Cliente {
     
 }
