@@ -24,7 +24,7 @@ public class Conta {
     @Column(name = "tipo_conta", nullable = false)
     private int tipoConta;
 
-    @Column(name = "saldo")
+    @Column(name = "saldo",nullable = false)
     private double saldo;
 
     @Column(name = "titular", nullable = false)
