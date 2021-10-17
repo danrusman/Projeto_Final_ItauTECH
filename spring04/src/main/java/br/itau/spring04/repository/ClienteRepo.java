@@ -1,5 +1,8 @@
 package br.itau.spring04.repository;
 
-public class ClienteRepo {
+import org.springframework.data.repository.CrudRepository;
+
+public interface ClienteRepo {
+
     
 }
