@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity //diz que essa classe vai ser armazenada no BD, pois nem todas pode ser armazenadas no BD
@@ -28,6 +30,10 @@ public class Conta {
     @Column(name = "titular", nullable = false)
     private String titular;
 
+     //atributo de ligacao com o cliente
+     @OneToOne // uma conta relacionada a 1 Cliente 
+     @JoinColumn(name = "cod_cliente") // código do cliente que é dono desta conta
+     private Cliente titularConta;
 
     public long getNumero() {
         return numero;
@@ -67,6 +73,15 @@ public class Conta {
 
     public void setTitular(String titular) {
         this.titular = titular;
+    }
+
+    public Cliente getTitularConta() {
+        return titularConta;
+    }
+    public void setTitularConta(Cliente titularConta) {
+        this.titularConta = titularConta;
     }  
+
+    
 
 }
