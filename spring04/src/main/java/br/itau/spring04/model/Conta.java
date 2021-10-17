@@ -14,7 +14,7 @@ public class Conta {
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY) // auto-increment 1, 2, 3...
     @Column(name = "numero", nullable = false)
-    private int numero;
+    private long numero;
 
     @Column(name = "agencia", nullable = false)
     private int agencia;
@@ -22,18 +22,18 @@ public class Conta {
     @Column(name = "tipo_conta", nullable = false)
     private int tipoConta;
 
-    @Column(name = "saldo",nullable = false)
+    @Column(name = "saldo", nullable = false)
     private double saldo;
 
     @Column(name = "titular", nullable = false)
     private String titular;
 
 
-    public int getNumero() {
+    public long getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
+    public void setNumero(long numero) {
         this.numero = numero;
     }
 
