@@ -30,7 +30,7 @@ public class ContaController {
 
 
     @GetMapping("/contas/{numero}")
-	public ResponseEntity<Conta> recuperarPeloNumero(@PathVariable int numero) {
+	public ResponseEntity<Conta> recuperarPeloNumero(@PathVariable Long numero) {
 		Conta resultado = repo.findById(numero).orElse(null);
 
 		if (resultado != null) {
