@@ -18,16 +18,16 @@ public class Conta {
     @Column(name = "numero", nullable = false)
     private long numero;
 
-    @Column(name = "agencia", nullable = false)
+    @Column(name = "agencia", length = 6, nullable = false)
     private int agencia;
 
-    @Column(name = "tipo_conta", nullable = false)
+    @Column(name = "tipo_conta", length = 2, nullable = false)
     private int tipoConta;
 
-    @Column(name = "saldo", nullable = false)
+    @Column(name = "saldo", length = 10, nullable = false)
     private double saldo;
 
-    @Column(name = "titular", nullable = false)
+    @Column(name = "titular", length = 100, nullable = false)
     private String titular;
 
      //atributo de ligacao com o cliente
