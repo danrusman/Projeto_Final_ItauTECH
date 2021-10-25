@@ -5,69 +5,75 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-@Entity
-@Table(name = "tb_conta")
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@Entity // diz que essa classe vai ser armazenada no BD
+@Table(name = "tb_conta") /// JPA sabe qual a tabela no banco que corresponde a essa CLASSE
 public class Conta {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "cod_interno")
-    private long codigoInterno;
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // auto-increment 1, 2, 3...
+    @Column(name = "numero")
+    private long numero;
 
-    @Column(name = "nome", length = 220, nullable = false)
-    private String nome;
+    @Column(name = "agencia", nullable = false)
+    private int agencia;
 
-    @Column(name = "cpf", length = 20, unique = true, nullable = false)
-    private String cpf;
+    @Column(name = "saldo", nullable = false)
+    private double saldo;
 
-    @Column(name = "telefone", length = 30, nullable = false)
-    private String telefone;
+    @Column(nullable = false)
+    private int tipoConta; // 0 - conta corrente, 1 - poupança, 2 - investimento
 
-    @Column(name = "email", length = 30, unique = true, nullable = false)
-    private String email;
+    // atributo de ligacao com o cliente
+    @ManyToOne // uma conta relacionada a 1 Cliente
+    @JoinColumn(name = "titular") // código do cliente que é dono desta conta
+    @JsonIgnoreProperties("conta")
+    private Cliente cliente;
 
-    
-    public long getCodigoInterno() {
-        return codigoInterno;
+    public long getNumero() {
+        return numero;
     }
 
-    public void setCodigoInterno(long codigoInterno) {
-        this.codigoInterno = codigoInterno;
+    public void setNumero(long numero) {
+        this.numero = numero;
     }
 
-    public String getNome() {
-        return nome;
+    public int getAgencia() {
+        return agencia;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setAgencia(int agencia) {
+        this.agencia = agencia;
     }
 
-    public String getCpf() {
-        return cpf;
+    public double getSaldo() {
+        return saldo;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
     }
 
-    public String getTelefone() {
-        return telefone;
+    public int getTipoConta() {
+        return tipoConta;
     }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void setTipoConta(int tipoConta) {
+        this.tipoConta = tipoConta;
     }
 
-    public String getEmail() {
-        return email;
+    public Cliente getCliente() {
+        return cliente;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
-
-    
+ 
     
 }

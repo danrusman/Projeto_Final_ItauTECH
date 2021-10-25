@@ -17,17 +17,17 @@ Banco de Dados: MySQL
 API: SpringBoot
 Modelagem de Dados:
 Todo cliente possui os seguintes dados para serem cadastrados
-● codigo interno
-● nome
-● cpf
-● telefone
-● email
+- codigo interno
+- nome
+- cpf
+- telefone
+- email
 Toda conta bancária possui os seguintes dados
-● numero
-● agência
-● tipo da conta (0 - conta corrente, 1 - poupança, 2 - investimento)
-● saldo
-● titular da conta
+- número
+- agência
+- tipo da conta (0 - conta corrente, 1 - poupança, 2 - investimento)
+- saldo
+- titular da conta
 ### ENTREGÁVEIS
 Endpoint para consulta de todas as contas (deve retornar uma lista de objetos do tipo
 que armazena Conta Bancária):
@@ -43,6 +43,7 @@ Todos os dados devem ser retornados em formato JSON.
 - API Spring Boot
 
 ## Integrantes
+- Bruno
 - Daniel Russo Manrique
 - Ramon
 - Raphael

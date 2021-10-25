@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Spring04Application<spring04>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "br.itau.spring04.Spring04Application",
+            "projectName": "spring04",
+            "args": ""
+        }
+    ]
+}
