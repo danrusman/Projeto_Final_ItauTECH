@@ -17,9 +17,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Cliente {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // auto-increment 1, 2, 3...
     @Column(name = "codigo_interno")
-    private long codigoInterno;
+    private long codigoInterno; 
 
     @Column(name = "nome", length = 200, nullable = false)
     private String nome;
@@ -30,11 +30,11 @@ public class Cliente {
     @Column(name = "email", length = 100, nullable = false, unique = true)
     private String email;
 
-    @Column(name = "telefone", length = 16, nullable = false, unique = true)
+    @Column(name = "telefone", length = 16, nullable = false)
     private String telefone;
 
-    @OneToMany(mappedBy = "cliente") // Uma conta está relacionada a um cliente
-    @JsonIgnoreProperties("cliente")
+    @OneToMany(mappedBy = "cliente") // Um cliente está relacionado a mais de uma conta
+    @JsonIgnoreProperties("cliente")  // Ignore o campo cliente
     private List<Conta> conta;
 
 

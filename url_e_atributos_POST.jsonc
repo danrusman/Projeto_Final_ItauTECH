@@ -1,0 +1,95 @@
+{
+    // CONTA
+    /* GET - Listar contas com dados dos clientes
+    localhost:8080/contas */
+    
+    /* GET - Consultar conta de um cliente específico
+    localhost:8080/contas/{id} */
+
+    /* POST - criar nova conta
+    localhost:8080/contas/nova */ 
+   
+        "saldo": 2000.0,
+        "agencia": {"codigo": 1}, // objeto Agência 
+        "cliente": {"codigoInterno": 1}, // ojeto Cliente
+        "tipoConta": {"codigo": 2} // objeto TipoConta
+   
+
+    /* PUT - Atualizar dados da conta de um cliente
+    localhost:8080/contas/atualizar */,
+    
+        "numero": 2,
+        "saldo": 2000.0,
+        "agencia": {"codigo": 1},
+        "cliente": {"codigoInterno": 1},
+        "tipoConta": {"codigo": 3}
+
+       
+
+    // CLIENTE
+    /* GET - Listar dados dos clientes
+    localhost:8080/cliente/listar */
+
+    /* GET - Listar dados de um cliente específico
+    localhost:8080/cliente/{codigoInterno} */
+
+    /* POST - Novo cliente
+    localhost:8080/cliente/novo */,
+
+        "nome": "NOME",
+        "cpf": "123.456.589-01",
+        "email": "nome@email.com",
+        "telefone": "(00) 1111-1111"
+
+    /* PUT - Novo cliente
+    localhost:8080/cliente/atualizar */,
+
+        "codigoInterno": 6,
+        "nome": "NOME",
+        "cpf": "123.456.589-01",
+        "email": "nome@email.com",
+        "telefone": "(00) 1111-1111"
+
+
+
+    // AGÊNCIAS
+    /* GET - Listar dados das agências
+    localhost:8080/agencias */
+
+    /* GET - Listar dados de uma agência
+    localhost:8080/agencias/{id} */
+
+    /* POST - Nova agência
+    localhost:8080/agencias/nova */,
+
+        "cep": "12345-671",
+        "logradouro": "RUA A",
+        "numero": 1000,
+        "cidade": "Alegre",
+        "bairro": "Feliz",
+        "uf": "UF"
+
+    /* POST - Atualizar dados de uma agência
+    localhost:8080/agencias/atualizar */,
+    
+        "codigo": 1,
+        "cep": "12345-671",
+        "logradouro": "RUA A",
+        "numero": 1000,
+        "cidade": "Alegre",
+        "bairro": "Feliz",
+        "uf": "UF"
+
+
+    // TIPOS CONTAS
+    /* GET - Listar tipos das contas
+    localhost:8080/tipos-contas */
+
+     /* POST - Atualizar dados de um tipo de conta
+    localhost:8080/agencias/atualizar */,
+    
+        "codigo": 1,
+        "numero": 0, // 0 - conta corrente, 1 - conta poupança, 2 - conta investimento
+        "descricao": "Conta Corrente"
+
+}

@@ -20,35 +20,31 @@ public class Conta {
     @Column(name = "numero")
     private long numero;
 
-    @Column(name = "agencia", nullable = false)
-    private int agencia;
-
     @Column(name = "saldo", nullable = false)
-    private double saldo;
+    private double saldo; 
 
-    @Column(nullable = false)
-    private int tipoConta; // 0 - conta corrente, 1 - poupança, 2 - investimento
+    @ManyToOne // Várias contas relacionadas com um cliente
+    @JoinColumn(name = "titular", nullable = false) // chave de ligação com a entidade Cliente
+    @JsonIgnoreProperties("conta") // Ignore o campo conta
+    private Cliente cliente; 
 
-    // atributo de ligacao com o cliente
-    @ManyToOne // uma conta relacionada a 1 Cliente
-    @JoinColumn(name = "titular") // código do cliente que é dono desta conta
-    @JsonIgnoreProperties("conta")
-    private Cliente cliente;
+    @ManyToOne   // Várias contas relacionadas com uma agência
+    @JoinColumn(name = "cod_agencia", nullable = false) // chave de ligação com a entidade agência
+    @JsonIgnoreProperties("conta") // Ignore o campo conta
+    private Agencia agencia; // "agencia": {"codigo": 1},
 
+    @ManyToOne // Várias contas relacionadas com um tipo de conta
+    @JoinColumn(name = "tipo_conta", nullable = false) // chave de ligação com a entidade TipoConta
+    @JsonIgnoreProperties("conta")  // Ignore o campo conta
+    private TipoConta tipoConta;
+
+    
     public long getNumero() {
         return numero;
     }
 
     public void setNumero(long numero) {
         this.numero = numero;
-    }
-
-    public int getAgencia() {
-        return agencia;
-    }
-
-    public void setAgencia(int agencia) {
-        this.agencia = agencia;
     }
 
     public double getSaldo() {
@@ -59,14 +55,6 @@ public class Conta {
         this.saldo = saldo;
     }
 
-    public int getTipoConta() {
-        return tipoConta;
-    }
-
-    public void setTipoConta(int tipoConta) {
-        this.tipoConta = tipoConta;
-    }
-
     public Cliente getCliente() {
         return cliente;
     }
@@ -75,5 +63,21 @@ public class Conta {
         this.cliente = cliente;
     }
 
-       
+    public Agencia getAgencia() {
+        return agencia;
+    }
+
+    public void setAgencia(Agencia agencia) {
+        this.agencia = agencia;
+    }
+
+    public TipoConta getTipoConta() {
+        return tipoConta;
+    }
+
+    public void setTipoConta(TipoConta tipoConta) {
+        this.tipoConta = tipoConta;
+    }
+
+           
 }
