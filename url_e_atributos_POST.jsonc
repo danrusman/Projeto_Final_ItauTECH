@@ -11,7 +11,7 @@
    
         "saldo": 2000.0,
         "agencia": {"codigo": 1}, // objeto Agência 
-        "cliente": {"codigoInterno": 1}, // ojeto Cliente
+        "cliente": {"codigoInterno": 1}, // objeto Cliente
         "tipoConta": {"codigo": 2} // objeto TipoConta
    
 
@@ -41,7 +41,7 @@
         "email": "nome@email.com",
         "telefone": "(00) 1111-1111"
 
-    /* PUT - Novo cliente
+    /* PUT - Atualizar dados de um cliente
     localhost:8080/cliente/atualizar */,
 
         "codigoInterno": 6,
@@ -69,7 +69,7 @@
         "bairro": "Feliz",
         "uf": "UF"
 
-    /* POST - Atualizar dados de uma agência
+    /* PUT - Atualizar dados de uma agência
     localhost:8080/agencias/atualizar */,
     
         "codigo": 1,
@@ -85,7 +85,7 @@
     /* GET - Listar tipos das contas
     localhost:8080/tipos-contas */
 
-     /* POST - Atualizar dados de um tipo de conta
+     /* PUT - Atualizar dados de um tipo de conta
     localhost:8080/agencias/atualizar */,
     
         "codigo": 1,

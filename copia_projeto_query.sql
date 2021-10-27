@@ -40,7 +40,7 @@ UPDATE tb_cliente SET email = 'wagner@email.com' , nome = 'Wagner' WHERE codigo_
 
 DESC tb_cliente;
 SELECT * FROM tb_cliente;
-TRUNCATE TABLE tb_clientes;
+-- TRUNCATE TABLE tb_clientes;
 
 -- insere valores na tabela tipo conta
 INSERT INTO tb_tipo_conta (codigo, descricao, numero) 
@@ -54,6 +54,7 @@ INSERT INTO tb_conta (numero, saldo, cod_agencia, tipo_conta, titular)
 VALUES (null, 0, 1, 2, 2), (null, 0, 1, 1, 1), (null, 0, 1, 2, 1), (null, 0, 1, 3, 1), (null, 0, 2, 1, 2),
 (null, 0, 3, 1, 3), (null, 0, 4, 1, 4),  (null, 0, 4, 1, 5), (null, 0, 3, 1, 6), (null, 0, 3, 2, 6), (null, 0, 3, 3, 6);
 
+select count(conta.numero) from tb_conta conta where conta.titular = 7 and conta.tipo_conta = 1;
 DESC tb_conta;
 SELECT * FROM tb_conta;
 -- TRUNCATE TABLE tb_conta;
@@ -74,6 +75,9 @@ from tb_conta
 inner join tb_agencia on tb_conta.cod_agencia = tb_agencia.agencia 
 inner join tb_cliente on tb_conta.titular_conta = tb_cliente.codigo_interno 
 inner join tb_tipo_conta on tb_conta.cod_tipo_conta = tb_tipo_conta.codigo where tb_conta.numero = 3;
+
+SELECT * FROM tb_conta
+INNER JOIN tb_tipo_conta ON tb_conta.tipo_conta = tb_tipo_conta.codigo;
 
 
 
