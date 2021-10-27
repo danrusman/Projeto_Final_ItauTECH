@@ -14,9 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.itau.spring04.model.Cliente;
 import br.itau.spring04.model.Conta;
-import br.itau.spring04.model.TipoConta;
 import br.itau.spring04.repository.ContaRepo;
 
 @RestController // indica que esta classe é um controller REST
