@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.itau.spring04.model.Cliente;
 import br.itau.spring04.model.Conta;
 import br.itau.spring04.repository.ContaRepo;
 
@@ -48,6 +47,7 @@ public class ContaController {
 
     @PostMapping("/contas/nova")
     public ResponseEntity<Conta> novaConta(@RequestBody Conta conta){
+        
         Conta novaConta  = repo.save(conta);
         return ResponseEntity.status(HttpStatus.CREATED).body(novaConta);
     }
