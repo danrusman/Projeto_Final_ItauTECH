@@ -68,6 +68,14 @@ public class Agencia {
         this.codigo = codigo;
     }
 
+    public long getNumeroAgencia() {
+        return numeroAgencia;
+    }
+
+    public void setNumeroAgencia(long numeroAgencia) {
+        this.numeroAgencia = numeroAgencia;
+    }
+
     public String getCep() {
         return cep;
     }
