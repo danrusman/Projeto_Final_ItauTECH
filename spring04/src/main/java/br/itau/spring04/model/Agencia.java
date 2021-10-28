@@ -28,6 +28,9 @@ public class Agencia {
     @Column(name = "codigo")
     private Long codigo; 
 
+    @Column(name = "cod_agencia") // número da agência
+    private long numeroAgencia;
+
     @Column(name = "cep", length = 10, nullable = false)
     private String cep;
 
@@ -35,7 +38,7 @@ public class Agencia {
     private String logradouro;
 
     @Column(name = "numero", nullable = false)
-    private int numero;
+    private int numero; // númmero em relação ao logradouro.
 
     @Column(name = "cidade", length = 50, nullable = false)
     private String cidade;

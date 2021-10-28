@@ -8,11 +8,13 @@ DROP TABLE tb_tipo_conta;
 
 SHOW TABLES;
 -- insere valores na tabela agência
-INSERT INTO tb_agencia (codigo, bairro, cep, cidade, logradouro, numero, uf) 
-VALUES (null, 'Feliz', '12345-670', 'Alegre', 'Rua A', 1000, 'UF'),
-(null, 'Feliz', '12345-680', 'Alegre', 'Rua B', 1001, 'UF'),
-(null, 'Feliz', '12345-690', 'Alegre', 'Rua C', 1002, 'UF'),
-(null, 'Feliz', '12345-700', 'Alegre', 'Rua D', 1003, 'UF');
+-- cod_agencia: código da agência
+-- numero: número em relação ao logradouro
+INSERT INTO tb_agencia (codigo, bairro, cep, cidade, logradouro, numero, cod_agencia, uf) 
+VALUES (null, 'Feliz', '12345-670', 'Alegre', 'Rua A', 1000, 2021, 'UF'),
+(null, 'Feliz', '12345-680', 'Alegre', 'Rua B', 1001, 2022, 'UF'),
+(null, 'Feliz', '12345-690', 'Alegre', 'Rua C', 1002, 2023, 'UF'),
+(null, 'Feliz', '12345-700', 'Alegre', 'Rua D', 1003, 2024, 'UF');
 
 DESC tb_agencia;
 SELECT * FROM tb_agencia;
@@ -40,7 +42,7 @@ UPDATE tb_cliente SET email = 'wagner@email.com' , nome = 'Wagner' WHERE codigo_
 
 DESC tb_cliente;
 SELECT * FROM tb_cliente;
--- TRUNCATE TABLE tb_clientes;
+TRUNCATE TABLE tb_cliente;
 
 -- insere valores na tabela tipo conta
 INSERT INTO tb_tipo_conta (codigo, descricao, numero) 
@@ -57,7 +59,7 @@ VALUES (null, 0, 1, 2, 2), (null, 0, 1, 1, 1), (null, 0, 1, 2, 1), (null, 0, 1, 
 select count(conta.numero) from tb_conta conta where conta.titular = 7 and conta.tipo_conta = 1;
 DESC tb_conta;
 SELECT * FROM tb_conta;
--- TRUNCATE TABLE tb_conta;
+ TRUNCATE TABLE tb_conta;
 -- DROP TABLE tb_conta;
 
 

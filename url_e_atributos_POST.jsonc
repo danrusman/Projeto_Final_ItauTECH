@@ -60,13 +60,17 @@
     localhost:8080/agencias/{id} */
 
     /* POST - Nova agência
-    localhost:8080/agencias/nova */,
+    localhost:8080/agencias/nova 
+
+    cod_agencia: código da agência,
+    numero: número em relação ao logradouro*/,
 
         "cep": "12345-671",
         "logradouro": "RUA A",
         "numero": 1000,
         "cidade": "Alegre",
         "bairro": "Feliz",
+        "cod_agencia": 2025,
         "uf": "UF"
 
     /* PUT - Atualizar dados de uma agência
@@ -78,6 +82,7 @@
         "numero": 1000,
         "cidade": "Alegre",
         "bairro": "Feliz",
+        "cod_agencia": 2025,
         "uf": "UF"
 
 

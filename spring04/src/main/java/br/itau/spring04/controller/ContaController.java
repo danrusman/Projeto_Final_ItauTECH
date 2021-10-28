@@ -47,7 +47,7 @@ public class ContaController {
 
     @PostMapping("/contas/nova")
     public ResponseEntity<Conta> novaConta(@RequestBody Conta conta){
-        Conta novaConta = repo.save(conta);
+        Conta novaConta  = repo.save(conta);
         return ResponseEntity.status(HttpStatus.CREATED).body(novaConta);
     }
 
